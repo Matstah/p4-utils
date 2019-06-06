@@ -674,6 +674,13 @@ class NetworkGraph(nx.Graph):
         paths = [tuple(x) for x in paths]
         return paths
 
+    #my extension to the topology.py
+    def get_all_simple_paths_between_nodes(self, node1, node2, count=None):
+        """Compute all simple paths between two nodes."""
+        paths = nx.all_simple_paths(self, node1, node2, count)
+        paths = [tuple(x) for x in paths]
+        return paths
+
 if __name__ == '__main__':
     import sys
 
